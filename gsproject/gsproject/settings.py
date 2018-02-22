@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n4m64n6%f+x&9ydgy)%*)f6vl2ocriujl(e%jvnusm=!09hxq)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,8 +77,15 @@ WSGI_APPLICATION = 'gsproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mgsdb',
+        'USER': 'mgsdbuser',
+        'PASSWORD':'102@mspass',
+        'HOST':'localhost',
+        'PORT':'',
+        'OPTIONS': {
+               'init_command' : "SET sql_mode='STRICT_TRANS_TABLES'",
+              }
     }
 }
 

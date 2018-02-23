@@ -1,8 +1,16 @@
-from .models import Question
+from .models import Question, Subject
 from rest_framework import serializers
 
-class QuestionSerializer(serializers.ModelSerializer):
+
+
+class QuestionSerializer(serializers.ModelSerializer):   
     class Meta:
         model = Question
-        fields = ('id', 'text', 'optiona', 'optionb', 'optionc', 'optiond', 'answer')
+        fields = ('section','text', 'a', 'b', 'c', 'd', 'answer')
+
+class SubjectSerializer(serializers.ModelSerializer):
+    questions = QuestionSerializer(many=True, read_only=True)
+    class Meta:
+        model = Subject
+        fields= ('subject', 'questions')
         

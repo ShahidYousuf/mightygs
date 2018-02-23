@@ -4,15 +4,16 @@ from __future__ import unicode_literals
 
 from django.db import migrations
 
-def create_initial_questions(apps, schema_editor):
-    Question = apps.get_model('restapp', 'Question')
-    
-    Question(text='what is your name?', optiona='zahid', optionb='shahid', optionc='isna', optiond='inayat', answer='shahid').save()
-    Question(text='what is your age?', optiona='25', optionb='27', optionc='28', optiond='29', answer='27').save()
-    Question(text='where do you live?', optiona='shopian', optionb='budgam', optionc='srinagar', optiond='pulwama', answer='shopian').save()
-    Question(text='what is your profession?', optiona='Teacher', optionb='carpenter', optionc='engineer', optiond='doctor', answer='engineer').save()
-    Question(text='what is your religion?', optiona='christianity', optionb='buddhism', optionc='islam', optiond='jewism', answer='islam').save()
-    Question(text='what is your favourite programming language?', optiona='java', optionb='python', optionc='javascript',optiond='none',answer='python').save()
+#def create_initial_questions(apps, schema_editor):
+#    Question = apps.get_model('restapp', 'Question')
+#    
+#    Question(text='what is your name?', optiona='zahid', optionb='shahid', optionc='isna', optiond='inayat', answer='shahid').save()
+#    Question(text='what is your age?', optiona='25', optionb='27', optionc='28', optiond='29', answer='27').save()
+#    Question(text='where do you live?', optiona='shopian', optionb='budgam', optionc='srinagar', optiond='pulwama', answer='shopian').save()
+#    Question(text='what is your profession?', optiona='Teacher', optionb='carpenter', optionc='engineer', optiond='doctor', answer='engineer').save()
+#    Question(text='what is your religion?', optiona='christianity', optionb='buddhism', optionc='islam', optiond='jewism', answer='islam').save()
+#    Question(text='what is your favourite programming language?', optiona='java', optionb='python', optionc='javascript',optiond='none',answer='python').save()
+#
 
 
 
@@ -25,5 +26,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-      migrations.RunPython(create_initial_questions),
+     
     ]

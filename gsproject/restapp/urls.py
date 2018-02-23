@@ -2,7 +2,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^questions/$', views.QuestionList.as_view()),
+    url(r'^subjects/$', views.SubjectList.as_view()),
      
 
 ]

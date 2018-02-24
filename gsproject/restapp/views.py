@@ -17,8 +17,14 @@ class QuestionList(APIView):
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data)
 
+# sample queries
+# www.shahidyousuf.pythonanywhere.com/subjects?subname=HIST
 class SubjectList(APIView):
     def get(self, request, format=None):
+        subname = request.query_params.get('subname', None)
         subjects = Subject.objects.all()
+        if subname is not None:
+            subjects = subjects.filter(subject = subname)
+            
         serializer = SubjectSerializer(subjects, many=True)
         return Response(serializer.data)
